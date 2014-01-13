@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BPMODefinition BPMOId="RequestForLeave" Version="1.0.0" NodeId="RequestForLeave" MinOccur="1" MaxOccur="1" xmlns="http://de.agito/cps/core">
+    <BPMOLabel>
+        <Text Language="en">Request for leave</Text>
+        <Text Language="de">Urlaubsantrag</Text>
+    </BPMOLabel>
+    <Languages DefaultLanguage="de">
+        <Language>en</Language>
+        <Language>de</Language>
+    </Languages>
+    <Lifecycles>
+        <Lifecycle Id="New">
+            <Label>
+                <Text Language="en">New</Text>
+                <Text Language="de">Neu</Text>
+            </Label>
+        </Lifecycle>
+    </Lifecycles>
+    <ProcessActivities>
+        <ProcessActivityId Id="*"/>
+        <ProcessActivityId Id="$DRAFT">
+            <Label>
+                <Text Language="en">Draft</Text>
+                <Text Language="de">Entwurf</Text>
+            </Label>
+        </ProcessActivityId>
+    </ProcessActivities>
+    <ClassArtifacts Package="org.agito.demo.hr.leaverequest" UITechnology="Vaadin"/>
+</BPMODefinition>
