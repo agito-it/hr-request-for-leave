@@ -9,6 +9,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.bpmo>5.4-SNAPSHOT</version.bpmo>
+		<version.activiti>5.14.0.a2</version.activiti>
 	</properties>
 	<packaging>war</packaging>
 	<dependencies>
@@ -30,14 +31,23 @@
 			<version>${version.bpmo}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+ 			<version>${version.activiti}</version> 
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>de.agito.cps.junit</groupId>
 			<artifactId>cps-junit-api</artifactId>
 			<version>${version.bpmo}</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -83,7 +93,6 @@
 			<url>https://service.agito-it.com/nexus/content/groups/public</url>
 		</repository>
 	</repositories>
-
 	<profiles>
 		<!-- manifest handling for SAP HANA -->
 		<profile>
@@ -112,8 +121,7 @@
 								<Bundle-Description>${project.name}</Bundle-Description>
 								<Web-ContextPath>/${project.artifactId}</Web-ContextPath>
 								<Import-Package> de.agito.cps.*,com.vaadin.* </Import-Package>
-								<Require-Bundle>
-									agito-bpm-foundation;bundle-version="0.0.0"
+								<Require-Bundle> agito-bpm-foundation;bundle-version="0.0.0" 
 								</Require-Bundle>
 							</instructions>
 						</configuration>
@@ -138,7 +146,6 @@
 			<id>jrebel</id>
 			<build>
 				<plugins>
-
 					<plugin>
 						<groupId>org.zeroturnaround</groupId>
 						<artifactId>jrebel-maven-plugin</artifactId>
@@ -161,12 +168,10 @@
 			</build>
 		</profile>
 	</profiles>
-
 	<scm>
 		<connection>scm:git:git://git.agito.corp/USECASE/DEMO/hr-request-for-leave.git</connection>
 		<developerConnection>scm:git:ssh://git@git.agito.corp/srv/git/browse/USECASE/DEMO/hr-request-for-leave.git</developerConnection>
 		<url>http://git.agito.corp/USECASE/DEMO/hr-request-for-leave.git</url>
-	  <tag>HEAD</tag>
-  </scm>
-
+		<tag>HEAD</tag>
+	</scm>
 </project>

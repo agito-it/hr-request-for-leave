@@ -11,7 +11,7 @@ import de.agito.cps.core.bpmo.api.enums.ILifecycle;
  */
 public enum RequestForLeaveLifecycle implements ILifecycle {
 
-	New(false, null);
+	New(false, "HR_RequestForLeave_RequestForLeave");
 
 	private RequestForLeaveLifecycle(boolean supportsOriginalValue, String processDefinitionId) { this.supportsOriginalValue = supportsOriginalValue; this.processDefinitionId = processDefinitionId; }
 	private boolean supportsOriginalValue;

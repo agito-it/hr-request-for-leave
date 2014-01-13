@@ -12,8 +12,8 @@ import java.util.Locale;
  */
 public enum RequestForLeaveLanguage implements ILanguage {
 
-	de("de", new Locale("de"), true),
-	en("en", new Locale("en"), false);
+	de("de", new Locale("de"), false),
+	en("en", new Locale("en"), true);
 
 	private RequestForLeaveLanguage(String code, Locale locale, boolean defaultIndicator) { this.code = code; this.locale = locale; this.defaultIndicator = defaultIndicator; }
 	private String code;

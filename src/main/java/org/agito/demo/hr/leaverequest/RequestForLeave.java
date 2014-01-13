@@ -16,7 +16,60 @@ import de.agito.cps.core.bpmo.api.enums.IBONode;
  */
 public enum RequestForLeave implements IBODataElement {
 
-	;
+	/**
+	 * <b>Type</b>
+	 * <p>
+	 * <i>{@link DefinitionArtifactType CHARACTERISTIC_DEFINITION}<i><br>
+	 * <i>{@link DataType ENUM}<i><br>
+	 * <i>{@link ControlType INTERACTIVE}<i><br>
+	 */
+	Type("Type", "RequestForLeave$Type", ControlType.INTERACTIVE),
+
+	/**
+	 * <b>Leave from</b>
+	 * <p>
+	 * <i>{@link DefinitionArtifactType CHARACTERISTIC_DEFINITION}<i><br>
+	 * <i>{@link DataType DATE}<i><br>
+	 * <i>{@link ControlType INTERACTIVE}<i><br>
+	 */
+	LeaveFrom("LeaveFrom", "RequestForLeave$LeaveFrom", ControlType.INTERACTIVE),
+
+	/**
+	 * <b>Leave to</b>
+	 * <p>
+	 * <i>{@link DefinitionArtifactType CHARACTERISTIC_DEFINITION}<i><br>
+	 * <i>{@link DataType DATE}<i><br>
+	 * <i>{@link ControlType INTERACTIVE}<i><br>
+	 */
+	LeaveTo("LeaveTo", "RequestForLeave$LeaveTo", ControlType.INTERACTIVE),
+
+	/**
+	 * <b>Business days</b>
+	 * <p>
+	 * <i>{@link DefinitionArtifactType CHARACTERISTIC_DEFINITION}<i><br>
+	 * <i>{@link DataType NUMERIC}<i><br>
+	 * <i>{@link ControlType DEFAULT}<i><br>
+	 */
+	LeaveDays("LeaveDays", "RequestForLeave$LeaveDays", ControlType.DEFAULT),
+
+	/**
+	 * <b>Calendar days</b>
+	 * <p>
+	 * <i>{@link DefinitionArtifactType CHARACTERISTIC_DEFINITION}<i><br>
+	 * <i>{@link DataType NUMERIC}<i><br>
+	 * <i>{@link ControlType DEFAULT}<i><br>
+	 */
+	LeaveDaysTotal("LeaveDaysTotal", "RequestForLeave$LeaveDaysTotal", ControlType.DEFAULT),
+
+	/**
+	 * <b>Details</b>
+	 * <p>
+	 * <i>{@link DefinitionArtifactType CHARACTERISTIC_DEFINITION}<i><br>
+	 * <i>{@link DataType STRING}<i><br>
+	 * <i>{@link ControlType INTERACTIVE}<i><br>
+	 */
+	Details("Details", "RequestForLeave$Details", ControlType.INTERACTIVE);
+
 	/**
 	 * <b>BPMO Identifier</b>
 	 */

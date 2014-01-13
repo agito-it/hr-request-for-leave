@@ -11,5 +11,9 @@ import de.agito.cps.core.bpmo.api.enums.IAction;
  */
 public enum RequestForLeaveAction implements IAction {
 
+	REPORT_LEAVE_TIME,
+	COMMIT_LEAVE_TIME,
+	PURGE_LEAVETIME;
+
 }
 

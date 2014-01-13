@@ -11,7 +11,9 @@ import de.agito.cps.core.bpmo.api.enums.IProcessActivity;
  */
 public enum RequestForLeaveProcessActivity implements IProcessActivity {
 
-	$DRAFT;
+	$DRAFT,
+	Approver,
+	Requester;
 
 }
 
