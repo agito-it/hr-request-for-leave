@@ -32,7 +32,7 @@
     <sequenceFlow id="notApproved" name="not approved" sourceRef="Exclusivegateway" targetRef="Requester">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${$cpsChoiceIdApprover.equals("NOT_APPROVED")}]]></conditionExpression>
     </sequenceFlow>
-    <userTask id="Requester" name="Refine Request" activiti:candidateUsers="${$cpsInitiator}" activiti:candidateGroups="Everyone,roleAnyone"></userTask>
+    <userTask id="Requester" name="Refine Request" activiti:assignee="${$cpsInitiator}" activiti:candidateUsers="${$cpsInitiator}"></userTask>
     <exclusiveGateway id="exclusivegateway2" name="Exclusive Gateway" default="repeat"></exclusiveGateway>
     <sequenceFlow id="flow4" sourceRef="Requester" targetRef="exclusivegateway2"></sequenceFlow>
     <sequenceFlow id="cancel" name="cancel" sourceRef="exclusivegateway2" targetRef="ProcessEndevent">

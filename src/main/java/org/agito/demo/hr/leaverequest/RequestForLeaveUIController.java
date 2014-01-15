@@ -39,7 +39,9 @@ import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
  * @author Jörg Burmeister
  */
 // @@end
-public class RequestForLeaveUIController extends BPMOUIController<RequestForLeaveAccess, RequestForLeaveAction, RequestForLeaveLifecycle, RequestForLeaveLanguage, RequestForLeaveProcessActivity, RequestForLeave> {
+public class RequestForLeaveUIController
+		extends
+		BPMOUIController<RequestForLeaveAccess, RequestForLeaveAction, RequestForLeaveLifecycle, RequestForLeaveLanguage, RequestForLeaveProcessActivity, RequestForLeave> {
 
 	public RequestForLeaveUIController(final IBPMOUIControllerContext context) {
 		super(context);
@@ -117,13 +119,7 @@ public class RequestForLeaveUIController extends BPMOUIController<RequestForLeav
 								processAgent.getProcessService().triggerIntermediateMessage(
 										bpmoAccess.getBPMOHeader().getProcessInstanceId(), "RefineRequest", null);
 
-								// read and claim TaskInstance
-								processAgent.getTaskService().claim(
-										processAgent.getTaskService().createTaskQuery()
-												.bpmoUuid(bpmoAccess.getBPMOHeader().getBPMOUuid()).singleResult()
-												.getId(), ClientContextFactory.getUserId());
-
-								// rebuild IBPMOComponent
+								// read BPMO in context of new created TaskInstance
 								UIClientContextAccessor
 										.getInstance()
 										.getContext(bpmoAccess.getBPMO())
