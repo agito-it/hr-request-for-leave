@@ -92,11 +92,7 @@
     </textAnnotation>
     <association id="association2" sourceRef="textannotation2" targetRef="RefineRequestMessage"></association>
   </process>
-  <process id="process_pool2" name="process_pool2" isExecutable="true">
-    <laneSet id="laneSet_process_pool2">
-      <lane id="lane1"></lane>
-    </laneSet>
-  </process>
+
   <bpmndi:BPMNDiagram id="BPMNDiagram_Collaboration">
     <bpmndi:BPMNPlane bpmnElement="Collaboration" id="BPMNPlane_Collaboration">
       <bpmndi:BPMNShape bpmnElement="pool1" id="BPMNShape_pool1">
