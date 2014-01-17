@@ -2,22 +2,6 @@ package org.agito.demo.hr.leaverequest;
 
 // @@begin imports
 
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-
-import javax.xml.bind.DatatypeConverter;
-import javax.xml.datatype.DatatypeConstants;
-
-import org.agito.demo.hr.leaverequest.RequestForLeaveAccess.LeaveFrom;
-import org.agito.demo.hr.leaverequest.RequestForLeaveAccess.LeaveTo;
-import org.agito.demo.hr.leaverequest.RequestForLeaveAccess.Type;
-import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResource;
-import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
-
 import de.agito.cps.core.annotations.BPMO;
 import de.agito.cps.core.annotations.Expression;
 import de.agito.cps.core.annotations.ExpressionDependency;
@@ -27,6 +11,25 @@ import de.agito.cps.core.bpmo.api.controller.BPMOController;
 import de.agito.cps.core.bpmo.api.controller.IBPMOControllerContext;
 import de.agito.cps.core.logger.Logger;
 import de.agito.cps.core.utils.ConvertUtils;
+import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import javax.xml.bind.DatatypeConverter;
+import javax.xml.datatype.DatatypeConstants;
+import org.agito.demo.hr.leaverequest.RequestForLeave;
+import org.agito.demo.hr.leaverequest.RequestForLeaveAccess;
+import org.agito.demo.hr.leaverequest.RequestForLeaveAccess.LeaveFrom;
+import org.agito.demo.hr.leaverequest.RequestForLeaveAccess.LeaveTo;
+import org.agito.demo.hr.leaverequest.RequestForLeaveAccess.Type;
+import org.agito.demo.hr.leaverequest.RequestForLeaveAction;
+import org.agito.demo.hr.leaverequest.RequestForLeaveLanguage;
+import org.agito.demo.hr.leaverequest.RequestForLeaveLifecycle;
+import org.agito.demo.hr.leaverequest.RequestForLeaveProcessActivity;
+import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResource;
+import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
 
 // @@end
 
@@ -38,9 +41,7 @@ import de.agito.cps.core.utils.ConvertUtils;
  */
 // @@end
 @BPMO(id = "RequestForLeave", version = "1.0.0", xml = "org/agito/demo/hr/leaverequest/RequestForLeave.bpmo")
-public class RequestForLeaveController
-		extends
-		BPMOController<RequestForLeaveAccess, RequestForLeaveAction, RequestForLeaveLifecycle, RequestForLeaveLanguage, RequestForLeaveProcessActivity, RequestForLeave> {
+public class RequestForLeaveController extends BPMOController<RequestForLeaveAccess, RequestForLeaveAction, RequestForLeaveLifecycle, RequestForLeaveLanguage, RequestForLeaveProcessActivity, RequestForLeave> {
 
 	public RequestForLeaveController(final IBPMOControllerContext context) {
 		super(context);
