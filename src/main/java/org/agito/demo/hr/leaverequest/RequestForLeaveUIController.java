@@ -39,9 +39,7 @@ import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
  * @author Jörg Burmeister
  */
 // @@end
-public class RequestForLeaveUIController
-		extends
-		BPMOUIController<RequestForLeaveAccess, RequestForLeaveAction, RequestForLeaveLifecycle, RequestForLeaveLanguage, RequestForLeaveProcessActivity, RequestForLeave> {
+public class RequestForLeaveUIController extends BPMOUIController<RequestForLeaveAccess, RequestForLeaveAction, RequestForLeaveLifecycle, RequestForLeaveLanguage, RequestForLeaveProcessActivity, RequestForLeave> {
 
 	public RequestForLeaveUIController(final IBPMOUIControllerContext context) {
 		super(context);

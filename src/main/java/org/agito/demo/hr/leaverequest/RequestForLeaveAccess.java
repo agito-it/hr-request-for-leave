@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.xml.datatype.XMLGregorianCalendar;
+import org.agito.demo.hr.leaverequest.RequestForLeaveLanguage;
 
 
 /**
@@ -72,6 +73,7 @@ public final class RequestForLeaveAccess extends BPMOAccess<RequestForLeaveAcces
 	public final static class Type extends CharacteristicAccess {
 		protected Type(BPMOAccess<?> bpmoAccess, String path) { super(bpmoAccess, path); }
 		public IKeywordEntry getValue() { return super.<IKeywordEntry>getCurrentValue(); }
+		public IKeywordEntry getValue(RequestForLeaveLanguage language) { return super.<IKeywordEntry>getCurrentValue(language); }
 		public String getValueKey() { return super.getCurrentValueKey(); }
 		public void setValue(String value) { super.setCurrentValue(value); }
 	}

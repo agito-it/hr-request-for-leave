@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-engine</artifactId>
- 			<version>${version.activiti}</version> 
+			<version>${version.activiti}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -42,11 +42,6 @@
 			<artifactId>cps-junit-api</artifactId>
 			<version>${version.bpmo}</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.1</version>
 		</dependency>
 	</dependencies>
 	<build>
