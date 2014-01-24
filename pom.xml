@@ -8,7 +8,7 @@
 	<description>agito BPM HR Request for Leave</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<version.bpmo>5.4-SNAPSHOT</version.bpmo>
+		<version.bpmo>5.4</version.bpmo>
 		<version.activiti>5.14</version.activiti>
 	</properties>
 	<packaging>war</packaging>
