@@ -7,7 +7,7 @@ import de.agito.cps.core.bpmo.api.enums.IProcessActivity;
 /**
  * Process Activity Enum for RequestForLeave.
  *
- * @author Jörg Burmeister
+ * @author andreas.weise
  */
 public enum RequestForLeaveProcessActivity implements IProcessActivity {
 

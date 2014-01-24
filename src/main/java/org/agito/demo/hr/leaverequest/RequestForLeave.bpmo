@@ -127,10 +127,10 @@
 				<Text>New</Text>
 			</Label>
 			<Description>
-				<Text><![CDATA[This implementation demonstrates a request for leave process. At a special feature, the requester has the possibility to refine the request after approval as long as the leave date is reached. <br>
+				<Text><![CDATA[This implementation demonstrates a request for leave process. The requester also has the possibility to redefine the request after the approval step as long as the leave date is reached.<br/>
 				In this demo scenario the initiator is a candidate user for all tasks to avoid switching the user context.]]></Text>
-				<Text Language="de"><![CDATA[Dieses Beispiel demonstriert einen Urlaub/Abwesenheit Antrag. Als spezielle Funktion wurde die Möglichkeit der Überarbeitung des Antrags durch den Antragsteller nach erfolgter Genehmigung implementiert.	Dies ist solange möglich, bis der im Antrag erfasste Startzeitpunkt erreicht wurde.<br>
-				Um den Prozess ohne Wechseln des Benutzers  vollständig ausführen zu können, ist in diesem Demo Szenario der Antragsteller potentieller Bearbeiter  aller Prozessaktivitäten.]]></Text>
+				<Text Language="de"><![CDATA[Dieses Beispiel demonstriert einen Urlaub/Abwesenheit Antrag. Als spezielle Funktion wurde die Möglichkeit der Überarbeitung des Antrags durch den Antragsteller nach erfolgter Genehmigung implementiert.	Dies ist solange möglich, bis der im Antrag erfasste Startzeitpunkt erreicht wurde.<br/>
+				Um den Prozess ohne Wechseln des Benutzers vollständig ausführen zu können, ist in diesem Demo Szenario der Antragsteller potentieller Bearbeiter  aller Prozessaktivitäten.]]></Text>
 			</Description>
 		</Lifecycle>
 	</Lifecycles>

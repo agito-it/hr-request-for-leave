@@ -7,7 +7,7 @@ import de.agito.cps.core.bpmo.api.enums.IAction;
 /**
  * BPMO Actions for RequestForLeave.
  *
- * @author Jörg Burmeister
+ * @author andreas.weise
  */
 public enum RequestForLeaveAction implements IAction {
 

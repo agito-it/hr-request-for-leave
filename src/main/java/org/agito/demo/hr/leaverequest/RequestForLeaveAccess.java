@@ -15,7 +15,7 @@ import org.agito.demo.hr.leaverequest.RequestForLeaveLanguage;
 /**
  * BPMOAccess for RequestForLeave.
  * 
- * @author Jörg Burmeister
+ * @author andreas.weise
  */
 public final class RequestForLeaveAccess extends BPMOAccess<RequestForLeaveAccess> {
 

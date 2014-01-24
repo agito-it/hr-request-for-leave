@@ -8,7 +8,7 @@ import java.util.Locale;
 /**
  * Languages for RequestForLeave.
  *
- * @author Jörg Burmeister
+ * @author andreas.weise
  */
 public enum RequestForLeaveLanguage implements ILanguage {
 

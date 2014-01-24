@@ -12,7 +12,7 @@ import de.agito.cps.core.bpmo.api.enums.IBONode;
 /**
  * Enum for RequestForLeave.
  *
- * @author Jörg Burmeister
+ * @author andreas.weise
  */
 public enum RequestForLeave implements IBODataElement {
 

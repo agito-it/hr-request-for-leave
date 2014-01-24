@@ -9,7 +9,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.bpmo>5.4-SNAPSHOT</version.bpmo>
-		<version.activiti>5.14.0.a2</version.activiti>
+		<version.activiti>5.14</version.activiti>
 	</properties>
 	<packaging>war</packaging>
 	<dependencies>
@@ -116,8 +116,7 @@
 								<Bundle-Description>${project.name}</Bundle-Description>
 								<Web-ContextPath>/${project.artifactId}</Web-ContextPath>
 								<Import-Package> de.agito.cps.*,com.vaadin.* </Import-Package>
-								<Require-Bundle> agito-bpm-foundation;bundle-version="0.0.0" 
-								</Require-Bundle>
+								<Require-Bundle>agito-bpm-foundation;bundle-version="0.0.0"</Require-Bundle>
 							</instructions>
 						</configuration>
 					</plugin>

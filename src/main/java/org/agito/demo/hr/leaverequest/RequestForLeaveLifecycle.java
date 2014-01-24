@@ -7,7 +7,7 @@ import de.agito.cps.core.bpmo.api.enums.ILifecycle;
 /**
  * Lifecycle Enum for RequestForLeave.
  *
- * @author Jörg Burmeister
+ * @author andreas.weise
  */
 public enum RequestForLeaveLifecycle implements ILifecycle {
 
