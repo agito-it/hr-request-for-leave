@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.agito.demo</groupId>
 	<artifactId>hr-request-for-leave</artifactId>
-	<version>1.0.1.RC0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>agito BPM HR Request for Leave</name>
 	<description>agito BPM HR Request for Leave</description>
 	<properties>
@@ -166,6 +166,6 @@
 		<connection>scm:git:git://git.agito.corp/USECASE/DEMO/hr-request-for-leave.git</connection>
 		<developerConnection>scm:git:ssh://git@git.agito.corp/srv/git/browse/USECASE/DEMO/hr-request-for-leave.git</developerConnection>
 		<url>http://git.agito.corp/USECASE/DEMO/hr-request-for-leave.git</url>
-		<tag>1.0.1.RC0</tag>
+		<tag>HEAD</tag>
 	</scm>
 </project>
