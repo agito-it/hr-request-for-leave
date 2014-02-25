@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>hr-request-for-leave-camunda</artifactId>
+
+	<parent>
+		<groupId>org.agito.demo</groupId>
+		<artifactId>hr-request-for-leave-parent</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+
+	<name>agito BPM HR Request for Leave (Camunda)</name>
+
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.agito.cps.core</groupId>
+			<artifactId>cps-core-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.agito.cps.ui</groupId>
+			<artifactId>cps-ui-vaadin-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.agito.cps.process</groupId>
+			<artifactId>cps-process-camunda-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.agito.cps.junit</groupId>
+			<artifactId>cps-junit-camunda-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>hr-request-for-leave</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.bpmo</include>
+					<include>**/*.bpmn</include>
+					<include>**/*.png</include>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+
+</project>

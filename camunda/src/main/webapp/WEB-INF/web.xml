@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<display-name>HR Request for Leave</display-name>
+
+	<!-- application filter -->
+	<filter>
+		<filter-name>ApplicationFilter</filter-name>
+		<filter-class>de.agito.cps.core.servlet.ApplicationFilter</filter-class>
+		<init-param>
+			<param-name>applicationId</param-name>
+			<param-value>HR_RequestForLeave</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>ApplicationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- authentication filter -->
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>de.agito.cps.core.servlet.AuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- bpmo -->
+	<servlet>
+		<servlet-name>BPMO VAADIN UI</servlet-name>
+		<servlet-class>de.agito.cps.ui.vaadin.bpmo.BPMOServlet</servlet-class>
+		<init-param>
+			<param-name>application</param-name>
+			<param-value>de.agito.cps.ui.vaadin.bpmo.BPMOApplication</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BPMO VAADIN UI</servlet-name>
+		<url-pattern>/default/*</url-pattern>
+		<url-pattern>/VAADIN/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>
