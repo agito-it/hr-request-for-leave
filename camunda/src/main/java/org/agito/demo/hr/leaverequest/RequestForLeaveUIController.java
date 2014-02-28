@@ -15,13 +15,14 @@ import de.agito.cps.core.logger.Logger;
 import de.agito.cps.core.process.spi.ProcessAgent;
 import de.agito.cps.process.camunda.CamundaProcessAgent;
 import de.agito.cps.ui.vaadin.bpmo.BPMOUIController;
+import de.agito.cps.ui.vaadin.bpmo.BPMOUi;
 import de.agito.cps.ui.vaadin.bpmo.IBPMOUIControllerContext;
 import de.agito.cps.ui.vaadin.bpmo.annotation.Navigation;
 import de.agito.cps.ui.vaadin.bpmo.annotation.StyleController;
-import de.agito.cps.ui.vaadin.bpmo.context.UIClientContextAccessor;
 import de.agito.cps.ui.vaadin.bpmo.enums.NavigationType;
-import de.agito.cps.ui.vaadin.bpmo.enums.SeparatorStyle;
-import de.agito.cps.ui.vaadin.bpmo.enums.UNIT;
+import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowGroupContent;
+import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayout.Colspan;
+import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayout.MaxColums;
 import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayoutManager;
 import de.agito.cps.ui.vaadin.bpmo.navigation.MenuItemId;
 import de.agito.cps.ui.vaadin.bpmo.styles.IFlowStyleController;
@@ -52,17 +53,15 @@ public class RequestForLeaveUIController
 	public void cpsInitRequestForLeave(final RequestForLeaveAccess bpmoAccess) {
 		// @@begin body:init:RequestForLeave
 		IFlowLayoutManager layoutManager = styleController.getLayoutManager();
-		layoutManager.setWidth(700, UNIT.PIXEL);
-		layoutManager
-				.createAndAddSeparator()
-				.setTitle(
-						String.format("%s / %s", bpmoAccess.getBPMODefinition().getBPMOLabel().getText(), bpmoAccess
-								.getBPMOHeader().getInitiator())).setTitleStyleName(SeparatorStyle.H1)
-				.setContentWidth(600, UNIT.PIXEL).addTitleStyleName(SeparatorStyle.HR);
-		layoutManager.createAndAddElements(RequestForLeave.Type);
-		layoutManager.addLineBreak();
-		layoutManager.addRemainingElements(RequestForLeave.Details);
-		layoutManager.addLineBreak();
+		layoutManager.setMaxCols(MaxColums.COL2);
+
+		IFlowGroupContent groupContent = layoutManager.createAndAddGroupContent().setCaption(
+				String.format("%s / %s", bpmoAccess.getBPMODefinition().getBPMOLabel().getText(), bpmoAccess
+						.getBPMOHeader().getInitiator()));
+		groupContent.setColspan(Colspan.DIMENSION_FULL);
+		groupContent.createAndAddElements(RequestForLeave.Type);
+		groupContent.newLine();
+		groupContent.addRemainingElements();
 		// @@end
 	}
 
@@ -116,15 +115,10 @@ public class RequestForLeaveUIController
 										bpmoAccess.getBPMOHeader().getProcessInstanceId(), "RefineRequest", null);
 
 								// read BPMO in context of new created TaskInstance
-								UIClientContextAccessor
-										.getInstance()
-										.getContext(bpmoAccess.getBPMO())
-										.getBPMOComponent()
-										.rebuild(
-												true,
-												processAgent.getTaskService().createTaskQuery()
-														.bpmoUuid(bpmoAccess.getBPMOHeader().getBPMOUuid())
-														.singleResult());
+								BPMOUi.getCurrent().rebuild(
+										true,
+										processAgent.getTaskService().createTaskQuery()
+												.bpmoUuid(bpmoAccess.getBPMOHeader().getBPMOUuid()).singleResult());
 
 							}
 						}, null, false, ClientMode.READONLY);

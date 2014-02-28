@@ -2,8 +2,12 @@ package org.agito.demo.hr.leaverequest;
 
 // @@begin imports
 
+import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResource;
+import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
+
 import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
+
 import de.agito.cps.core.bpmo.BPMOState;
 import de.agito.cps.core.bpmo.ClientMode;
 import de.agito.cps.core.context.ClientContextFactory;
@@ -11,24 +15,17 @@ import de.agito.cps.core.logger.Logger;
 import de.agito.cps.core.process.spi.ProcessAgent;
 import de.agito.cps.process.activiti.ActivitiProcessAgent;
 import de.agito.cps.ui.vaadin.bpmo.BPMOUIController;
+import de.agito.cps.ui.vaadin.bpmo.BPMOUi;
 import de.agito.cps.ui.vaadin.bpmo.IBPMOUIControllerContext;
 import de.agito.cps.ui.vaadin.bpmo.annotation.Navigation;
 import de.agito.cps.ui.vaadin.bpmo.annotation.StyleController;
-import de.agito.cps.ui.vaadin.bpmo.context.UIClientContextAccessor;
 import de.agito.cps.ui.vaadin.bpmo.enums.NavigationType;
-import de.agito.cps.ui.vaadin.bpmo.enums.SeparatorStyle;
-import de.agito.cps.ui.vaadin.bpmo.enums.UNIT;
+import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowGroupContent;
+import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayout.Colspan;
+import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayout.MaxColums;
 import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayoutManager;
 import de.agito.cps.ui.vaadin.bpmo.navigation.MenuItemId;
 import de.agito.cps.ui.vaadin.bpmo.styles.IFlowStyleController;
-import org.agito.demo.hr.leaverequest.RequestForLeave;
-import org.agito.demo.hr.leaverequest.RequestForLeaveAccess;
-import org.agito.demo.hr.leaverequest.RequestForLeaveAction;
-import org.agito.demo.hr.leaverequest.RequestForLeaveLanguage;
-import org.agito.demo.hr.leaverequest.RequestForLeaveLifecycle;
-import org.agito.demo.hr.leaverequest.RequestForLeaveProcessActivity;
-import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResource;
-import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
 
 // @@end
 
@@ -39,7 +36,9 @@ import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
  * @author Jörg Burmeister
  */
 // @@end
-public class RequestForLeaveUIController extends BPMOUIController<RequestForLeaveAccess, RequestForLeaveAction, RequestForLeaveLifecycle, RequestForLeaveLanguage, RequestForLeaveProcessActivity, RequestForLeave> {
+public class RequestForLeaveUIController
+		extends
+		BPMOUIController<RequestForLeaveAccess, RequestForLeaveAction, RequestForLeaveLifecycle, RequestForLeaveLanguage, RequestForLeaveProcessActivity, RequestForLeave> {
 
 	public RequestForLeaveUIController(final IBPMOUIControllerContext context) {
 		super(context);
@@ -54,17 +53,16 @@ public class RequestForLeaveUIController extends BPMOUIController<RequestForLeav
 	public void cpsInitRequestForLeave(final RequestForLeaveAccess bpmoAccess) {
 		// @@begin body:init:RequestForLeave
 		IFlowLayoutManager layoutManager = styleController.getLayoutManager();
-		layoutManager.setWidth(700, UNIT.PIXEL);
-		layoutManager
-				.createAndAddSeparator()
-				.setTitle(
-						String.format("%s / %s", bpmoAccess.getBPMODefinition().getBPMOLabel().getText(), bpmoAccess
-								.getBPMOHeader().getInitiator())).setTitleStyleName(SeparatorStyle.H1)
-				.setContentWidth(600, UNIT.PIXEL).addTitleStyleName(SeparatorStyle.HR);
-		layoutManager.createAndAddElements(RequestForLeave.Type);
-		layoutManager.addLineBreak();
-		layoutManager.addRemainingElements(RequestForLeave.Details);
-		layoutManager.addLineBreak();
+		layoutManager.setMaxCols(MaxColums.COL2);
+
+		IFlowGroupContent groupContent = layoutManager.createAndAddGroupContent().setCaption(
+				String.format("%s / %s", bpmoAccess.getBPMODefinition().getBPMOLabel().getText(), bpmoAccess
+						.getBPMOHeader().getInitiator()));
+		groupContent.setColspan(Colspan.DIMENSION_FULL);
+		groupContent.createAndAddElements(RequestForLeave.Type);
+		groupContent.newLine();
+		groupContent.addRemainingElements();
+
 		// @@end
 	}
 
@@ -118,15 +116,10 @@ public class RequestForLeaveUIController extends BPMOUIController<RequestForLeav
 										bpmoAccess.getBPMOHeader().getProcessInstanceId(), "RefineRequest", null);
 
 								// read BPMO in context of new created TaskInstance
-								UIClientContextAccessor
-										.getInstance()
-										.getContext(bpmoAccess.getBPMO())
-										.getBPMOComponent()
-										.rebuild(
-												true,
-												processAgent.getTaskService().createTaskQuery()
-														.bpmoUuid(bpmoAccess.getBPMOHeader().getBPMOUuid())
-														.singleResult());
+								BPMOUi.getCurrent().rebuild(
+										true,
+										processAgent.getTaskService().createTaskQuery()
+												.bpmoUuid(bpmoAccess.getBPMOHeader().getBPMOUuid()).singleResult());
 
 							}
 						}, null, false, ClientMode.READONLY);
