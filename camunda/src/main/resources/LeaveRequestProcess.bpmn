@@ -121,16 +121,12 @@
     <textAnnotation id="textannotation1">
       <text>fire on leave time start</text>
     </textAnnotation>
-    <association id="association1" sourceRef="textannotation1" targetRef="LeaveTimeReachedTimer"/>
-    <textAnnotation id="textannotation2">
-      <text>Receive request refine Message</text>
-    </textAnnotation>
-    <association id="association2" sourceRef="textannotation2" targetRef="RefineRequestMessage"/>
+    <association id="Association_1" sourceRef="textannotation1" targetRef="LeaveTimeReachedTimer"/>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_Collaboration">
     <bpmndi:BPMNPlane id="BPMNPlane_Collaboration" bpmnElement="Collaboration">
       <bpmndi:BPMNShape id="BPMNShape_pool1" bpmnElement="pool1" isHorizontal="false">
-        <omgdc:Bounds height="611.0" width="831.0" x="10.0" y="0.0"/>
+        <omgdc:Bounds height="611.0" width="841.0" x="10.0" y="0.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_RequesterLane" bpmnElement="RequesterLane" isHorizontal="false">
         <omgdc:Bounds height="172.0" width="811.0" x="40.0" y="0.0"/>
@@ -183,7 +179,7 @@
       <bpmndi:BPMNShape id="BPMNShape_LeaveTimeReachedTimer" bpmnElement="LeaveTimeReachedTimer">
         <omgdc:Bounds height="35.0" width="35.0" x="540.0" y="500.0"/>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="22.0" width="118.0" x="504.0" y="480.0"/>
+          <omgdc:Bounds height="22.0" width="118.0" x="499.0" y="477.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_COMMIT_LEAVETIME" bpmnElement="COMMIT_LEAVETIME">
@@ -199,10 +195,7 @@
         <omgdc:Bounds height="55.0" width="105.0" x="397.0" y="332.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_textannotation1" bpmnElement="textannotation1">
-        <omgdc:Bounds height="30.0" width="157.0" x="479.0" y="576.0"/>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_textannotation2" bpmnElement="textannotation2">
-        <omgdc:Bounds height="46.0" width="139.0" x="540.0" y="396.0"/>
+        <omgdc:Bounds height="30.0" width="157.0" x="612.0" y="564.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_flow2" bpmnElement="flow2">
         <omgdi:waypoint xsi:type="omgdc:Point" x="236.0" y="238.0"/>
@@ -245,7 +238,7 @@
         <omgdi:waypoint xsi:type="omgdc:Point" x="320.0" y="258.0"/>
         <omgdi:waypoint xsi:type="omgdc:Point" x="316.0" y="490.0"/>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="22.0" width="27.0" x="288.0" y="349.0"/>
+          <omgdc:Bounds height="22.0" width="27.0" x="288.0" y="360.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_flow5" bpmnElement="flow5">
@@ -307,13 +300,9 @@
           <omgdc:Bounds height="0.0" width="0.0" x="449.0" y="400.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_association1" bpmnElement="association1">
-        <omgdi:waypoint xsi:type="omgdc:Point" x="557.0" y="576.0"/>
-        <omgdi:waypoint xsi:type="omgdc:Point" x="557.0" y="534.0"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_association2" bpmnElement="association2">
-        <omgdi:waypoint xsi:type="omgdc:Point" x="540.0" y="426.0"/>
-        <omgdi:waypoint xsi:type="omgdc:Point" x="466.0" y="433.0"/>
+      <bpmndi:BPMNEdge id="BPMNEdge_Association_1" bpmnElement="Association_1" sourceElement="BPMNShape_textannotation1" targetElement="BPMNShape_LeaveTimeReachedTimer">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="658.0" y="564.0"/>
+        <omgdi:waypoint xsi:type="omgdc:Point" x="574.0" y="525.0"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
