@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.agito.demo</groupId>
 		<artifactId>hr-request-for-leave-parent</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 
 	<name>agito BPM HR Request for Leave (Camunda)</name>
