@@ -121,7 +121,7 @@
 		<Language>de</Language>
 	</Languages>
 	<Lifecycles>
-		<Lifecycle Id="New" ProcessDefinitionId="HR_RequestForLeave_RequestForLeave">
+		<Lifecycle Id="New" ProcessDefinitionId="RequestForLeave">
 			<Label>
 				<Text Language="de">Neu</Text>
 				<Text>New</Text>
