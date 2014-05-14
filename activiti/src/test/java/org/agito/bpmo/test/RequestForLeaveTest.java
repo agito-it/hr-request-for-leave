@@ -21,7 +21,7 @@ import de.agito.cps.test.activiti.annotations.BPMOTestUserId;
 public class RequestForLeaveTest {
 
 	@Rule
-	public BPMOTestRule bpmoRule = BPMOTestRule.init().applicationId("HR_RequestForLeave");
+	public BPMOTestRule bpmoRule = BPMOTestRule.init().applicationId("HR_RequestForLeave").variant("DEFAULT");
 
 	@BPMOTestUserId("bob")
 	@Test
