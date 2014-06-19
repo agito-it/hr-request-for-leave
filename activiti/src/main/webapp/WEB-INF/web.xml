@@ -5,24 +5,14 @@
 	version="2.5">
 	<display-name>HR Request for Leave</display-name>
 
-	<!-- application filter -->
-	<filter>
-		<filter-name>ApplicationFilter</filter-name>
-		<filter-class>de.agito.cps.core.servlet.ApplicationFilter</filter-class>
-		<init-param>
-			<param-name>applicationId</param-name>
-			<param-value>HR_RequestForLeave</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>ApplicationFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
 	<!-- authentication filter -->
 	<filter>
 		<filter-name>AuthenticationFilter</filter-name>
 		<filter-class>de.agito.cps.core.servlet.AuthenticationFilter</filter-class>
+		<init-param>
+			<param-name>applicationId</param-name>
+			<param-value>HR_RequestForLeave</param-value>
+		</init-param>
 	</filter>
 	<filter-mapping>
 		<filter-name>AuthenticationFilter</filter-name>
