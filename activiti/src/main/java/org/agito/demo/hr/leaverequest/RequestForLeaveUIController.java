@@ -57,7 +57,7 @@ public class RequestForLeaveUIController
 
 		IFlowGroupContent groupContent = layoutManager.createAndAddGroupContent().setCaption(
 				String.format("%s / %s", bpmoAccess.getBPMODefinition().getBPMOLabel().getText(), bpmoAccess
-						.getBPMOHeader().getInitiator()));
+						.getBPMOHeader().getInitiator().getDisplayName()));
 		groupContent.setColspan(Colspan.DIMENSION_FULL);
 		groupContent.createAndAddElements(RequestForLeave.Type);
 		groupContent.newLine();
