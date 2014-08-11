@@ -8,10 +8,10 @@ import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
 import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
 
+import de.agito.cps.commons.logging.Logger;
 import de.agito.cps.core.bpmo.BPMOState;
 import de.agito.cps.core.bpmo.ClientMode;
 import de.agito.cps.core.context.ClientContextFactory;
-import de.agito.cps.core.logger.Logger;
 import de.agito.cps.core.process.spi.ProcessAgent;
 import de.agito.cps.process.camunda.CamundaProcessAgent;
 import de.agito.cps.ui.vaadin.bpmo.BPMOUIController;
