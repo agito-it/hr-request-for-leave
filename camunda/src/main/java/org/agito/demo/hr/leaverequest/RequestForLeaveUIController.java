@@ -5,6 +5,7 @@ package org.agito.demo.hr.leaverequest;
 import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResource;
 import org.agito.demo.hr.leaverequest.resources.LeaveRequestTextResourceUtils;
 
+import com.vaadin.server.Sizeable.Unit;
 import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
 
@@ -21,10 +22,7 @@ import de.agito.cps.ui.vaadin.bpmo.annotation.Navigation;
 import de.agito.cps.ui.vaadin.bpmo.annotation.StyleController;
 import de.agito.cps.ui.vaadin.bpmo.enums.NavigationType;
 import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowGroupContent;
-import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayout.Colspan;
-import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayout.MaxColums;
 import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayoutManager;
-import de.agito.cps.ui.vaadin.bpmo.navigation.MenuItemId;
 import de.agito.cps.ui.vaadin.bpmo.styles.IFlowStyleController;
 
 // @@end
@@ -53,12 +51,12 @@ public class RequestForLeaveUIController
 	public void cpsInitRequestForLeave(final RequestForLeaveAccess bpmoAccess) {
 		// @@begin body:init:RequestForLeave
 		IFlowLayoutManager layoutManager = styleController.getLayoutManager();
-		layoutManager.setMaxCols(MaxColums.COL2);
+		layoutManager.setMaxWidth(600, Unit.PIXELS);
 
-		IFlowGroupContent groupContent = layoutManager.createAndAddGroupContent().setCaption(
+		IFlowGroupContent groupContent = layoutManager.createAndAddGroupContent().setTitle(
 				String.format("%s / %s", bpmoAccess.getBPMODefinition().getBPMOLabel().getText(), bpmoAccess
 						.getBPMOHeader().getInitiator().getDisplayName()));
-		groupContent.setColspan(Colspan.DIMENSION_FULL);
+		groupContent.setColspan(2);
 		groupContent.createAndAddElements(RequestForLeave.Type);
 		groupContent.newLine();
 		groupContent.addRemainingElements();
@@ -98,9 +96,7 @@ public class RequestForLeaveUIController
 					.processInstanceId(bpmoAccess.getBPMOHeader().getProcessInstanceId()).activityId("Eventgateway")
 					.singleResult() != null;
 			if (isWaitForFinish) {
-				styleController.getActionMenu().add(
-						styleController.getActionMenu().getMenuItemById(MenuItemId.REQUEST),
-						LeaveRequestTextResource.LABEL_REQUEST_REFINE,
+				styleController.getActionMenu().add(LeaveRequestTextResource.LABEL_REQUEST_REFINE,
 						LeaveRequestTextResourceUtils.getText(LeaveRequestTextResource.LABEL_REQUEST_REFINE),
 						new Command() {
 							private static final long serialVersionUID = 6097393723703009232L;
