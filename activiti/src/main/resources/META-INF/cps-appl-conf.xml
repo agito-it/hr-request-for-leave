@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ApplicationConfiguration xmlns="http://de.agito/cps/appconf">
-	<ApplicationLabel DefaultLanguage="de">
-		<Label Language="en">Request for leave</Label>
-		<Label Language="de">Urlaubsantrag</Label>
-	</ApplicationLabel>
-</ApplicationConfiguration>
