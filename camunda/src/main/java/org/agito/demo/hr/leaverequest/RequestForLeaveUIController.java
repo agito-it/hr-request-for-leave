@@ -21,7 +21,6 @@ import de.agito.cps.ui.vaadin.bpmo.IBPMOUIControllerContext;
 import de.agito.cps.ui.vaadin.bpmo.annotation.Navigation;
 import de.agito.cps.ui.vaadin.bpmo.annotation.StyleController;
 import de.agito.cps.ui.vaadin.bpmo.enums.NavigationType;
-import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowGroupContent;
 import de.agito.cps.ui.vaadin.bpmo.layout.flow.IFlowLayoutManager;
 import de.agito.cps.ui.vaadin.bpmo.styles.IFlowStyleController;
 
@@ -52,14 +51,15 @@ public class RequestForLeaveUIController
 		// @@begin body:init:RequestForLeave
 		IFlowLayoutManager layoutManager = styleController.getLayoutManager();
 		layoutManager.setMaxWidth(600, Unit.PIXELS);
+		layoutManager
+				.createAndAddBlockHeader()
+				.setTitle(
+						String.format("%s / %s", bpmoAccess.getBPMODefinition().getBPMOLabel().getText(), bpmoAccess
+								.getBPMOHeader().getInitiator().getDisplayName())).setMaxWidth(100, Unit.PERCENTAGE);
 
-		IFlowGroupContent groupContent = layoutManager.createAndAddGroupContent().setTitle(
-				String.format("%s / %s", bpmoAccess.getBPMODefinition().getBPMOLabel().getText(), bpmoAccess
-						.getBPMOHeader().getInitiator().getDisplayName()));
-		groupContent.setColspan(2);
-		groupContent.createAndAddElements(RequestForLeave.Type);
-		groupContent.newLine();
-		groupContent.addRemainingElements();
+		layoutManager.createAndAddElements(RequestForLeave.Type);
+		layoutManager.newLine();
+		layoutManager.addRemainingElements();
 		// @@end
 	}
 
