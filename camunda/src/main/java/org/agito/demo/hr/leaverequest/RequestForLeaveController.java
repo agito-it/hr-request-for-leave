@@ -3,11 +3,11 @@ package org.agito.demo.hr.leaverequest;
 // @@begin imports
 
 import de.agito.cps.commons.logging.Logger;
-import de.agito.cps.core.annotations.BPMO;
-import de.agito.cps.core.annotations.Expression;
-import de.agito.cps.core.annotations.ExpressionDependency;
 import de.agito.cps.core.bpmo.ExpressionType;
 import de.agito.cps.core.bpmo.MessageSeverity;
+import de.agito.cps.core.bpmo.annotations.BPMO;
+import de.agito.cps.core.bpmo.annotations.Expression;
+import de.agito.cps.core.bpmo.annotations.ExpressionDependency;
 import de.agito.cps.core.bpmo.api.controller.BPMOController;
 import de.agito.cps.core.bpmo.api.controller.IBPMOControllerContext;
 import de.agito.cps.core.utils.ConvertUtils;
