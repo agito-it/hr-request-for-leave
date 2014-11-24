@@ -5,5 +5,4 @@ This is a sample application for the agito BPM Foundation. Find more information
 The project contains three modules:
 
 * **/** - Root of the project.
-* **/activiti** - Activiti implementation of the sample application
 * **/camunda** - Camunda implementation of the sample application
